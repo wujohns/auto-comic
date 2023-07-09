@@ -12,9 +12,14 @@ sd-plugin:
 # 模型下载
 model-download:
 	cd tools/stable-diffusion-webui/models/Stable-diffusion && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/112251
+	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/105924 -O ./cetusMix_Whalefall2.safetensors
 
 # vae 下载
 vae-download:
 	cd tools/stable-diffusion-webui/models/VAE && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/swl-models/ClearVAE/resolve/main/ClearVAE.safetensors
+
+# lora 下载
+vae-download:
+	cd tools/stable-diffusion-webui/models/Lora && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/52053 -O ./HoshinoAi_v9-000007.safetensors
