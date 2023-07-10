@@ -12,7 +12,7 @@ sd-plugin:
 # 模型下载
 model-download:
 	cd tools/stable-diffusion-webui/models/Stable-diffusion && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/105924 -O ./cetusMix_Whalefall2.safetensors
+	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/90854 -O ./AnythingV5Ink_ink.safetensors
 
 # vae 下载
 vae-download:
@@ -23,3 +23,8 @@ vae-download:
 vae-download:
 	cd tools/stable-diffusion-webui/models/Lora && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/52053 -O ./HoshinoAi_v9-000007.safetensors
+
+# 反向推理 pt 下载
+booru-download:
+	cd tools/stable-diffusion-webui/models/torch_deepdanbooru && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://github.com/AUTOMATIC1111/TorchDeepDanbooru/releases/download/v1/model-resnet_custom_v3.pt -O ./model-resnet_custom_v3.pt

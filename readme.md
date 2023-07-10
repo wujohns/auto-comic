@@ -20,4 +20,6 @@
 这里采用表现稳定且工程性较好的 `分区模板` 策略，具体可以参考 [docs/prompt.md](/docs/prompt.md) 中的内容  
 
 ## TODO
+1. sd 的提示词相关参考：https://civitai.com/articles/851/stable-diffusion，需要总结出一套类似于分区模板这样有效的工程方法应用在该项目上  
+1. sd 接口化的案例初始案例打通  
 1. bark 服务的封装，作为语音合成的支撑  
