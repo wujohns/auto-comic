@@ -12,7 +12,7 @@ sd-plugin:
 # 模型下载
 model-download:
 	cd tools/stable-diffusion-webui/models/Stable-diffusion && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/90854 -O ./AnythingV5Ink_ink.safetensors
+	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/103436 -O ./flat2DAnimerge_v30.safetensors
 
 # vae 下载
 vae-download:
