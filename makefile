@@ -7,7 +7,7 @@ sd:
 # 插件列表地址: https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/Extensions-index.md
 sd-plugin:
 	cd tools/stable-diffusion-webui/extensions && \
-	git clone https://github.com/dtlnor/stable-diffusion-webui-localization-zh_CN
+	git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser
 
 # 模型下载
 model-download:
