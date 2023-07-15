@@ -32,6 +32,12 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui-rembg
 https://github.com/yfszzx/stable-diffusion-webui-images-browser  
 备注：该插件质量非常糟糕，后续如果有替代品则果断替换  
 
+## 任务队列管理
+任务队列管理: https://github.com/ArtVentureX/sd-webui-agent-scheduler  
+备注：  
+1. 其任务历史管理非常不错，可以作为初期的重要笔记记录  
+1. 支持 api 调用，可以用于后续的工作流程中  
+
 ## 待观察的插件
 该类插件可能很好用，但是有很多的 bug
 tag翻译：https://github.com/Physton/sd-webui-prompt-all-in-one.git

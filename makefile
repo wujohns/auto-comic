@@ -1,13 +1,13 @@
-# 启动 sd
+# 启动 sd(由于显卡版本过老用的是p40，不支持半精度，所以 --no-half)
 sd:
 	cd tools/stable-diffusion-webui && \
-	python launch.py --listen --xformers --api
+	python launch.py --listen --xformers --api --no-half
 
 # 给 sd 安装插件
 # 插件列表地址: https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/Extensions-index.md
 sd-plugin:
 	cd tools/stable-diffusion-webui/extensions && \
-	git clone https://github.com/huchenlei/sd-webui-openpose-editor
+	git clone https://github.com/ArtVentureX/sd-webui-agent-scheduler
 
 # 模型下载
 model-download:
@@ -43,3 +43,8 @@ controlnet-download:
 cdownload:
 	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/annotator/downloads/midas && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt
+
+# 方法算法依赖的模型下载
+up-download:
+	cd tools/stable-diffusion-webui/models/RealESRGAN && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth
