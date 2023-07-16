@@ -38,6 +38,10 @@ https://github.com/yfszzx/stable-diffusion-webui-images-browser
 1. 其任务历史管理非常不错，可以作为初期的重要笔记记录  
 1. 支持 api 调用，可以用于后续的工作流程中  
 
+## lycoris 插件
+参考: https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris  
+文章参考：https://www.bilibili.com/read/cv23595878/  
+
 ## 待观察的插件
 该类插件可能很好用，但是有很多的 bug
 tag翻译：https://github.com/Physton/sd-webui-prompt-all-in-one.git

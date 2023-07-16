@@ -7,7 +7,7 @@ sd:
 # 插件列表地址: https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/Extensions-index.md
 sd-plugin:
 	cd tools/stable-diffusion-webui/extensions && \
-	git clone https://github.com/ArtVentureX/sd-webui-agent-scheduler
+	git clone https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris.git
 
 # 模型下载
 model-download:
@@ -20,9 +20,14 @@ vae-download:
 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/swl-models/ClearVAE/resolve/main/ClearVAE.safetensors
 
 # lora 下载
-vae-download:
+lora-download:
 	cd tools/stable-diffusion-webui/models/Lora && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/52053 -O ./HoshinoAi_v9-000007.safetensors
+
+# lycoris 下载
+lyco-download:
+	cd tools/stable-diffusion-webui/models/LyCORIS && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/110362
 
 # 反向推理 pt 下载
 booru-download:
