@@ -25,7 +25,7 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui-rembg
 
 备注: 
 1. 需要手动安装 python 包 rembg 以及 onnxruntime  
-1. 该功能属于 附加功能 板块  
+1. 该功能属于 `附加功能` 板块  
 1. 部分模型需要手动下载(可以参考切换抠图模型时的命令行的信息)    
 
 ## 历史图片生成查看

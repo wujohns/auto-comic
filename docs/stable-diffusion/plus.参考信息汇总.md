@@ -11,3 +11,6 @@ Nenly同学(合集·B站第一套Stable Diffusion系统课程，来了！) - htt
 [元素同典](https://docs.qq.com/doc/DWFdSTHJtQWRzYk9k)  
 [Tags基本编写逻辑及三段术式入门与解析v3](https://docs.qq.com/doc/DSHBGRmRUUURjVmNM)  
 [重绘学派法术绪论](https://docs.qq.com/pdf/DR2V2ZlhHbnJUVHBa?)  
+
+## 小文档
+[LyCORIS使用教程](https://www.bilibili.com/read/cv23595878/)  
