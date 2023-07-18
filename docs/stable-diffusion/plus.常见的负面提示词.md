@@ -7,7 +7,6 @@ worst quality - 糟糕的质量
 low quality - 糟糕的质量  
 normal quality - 普通的质量  
 lowres - 糟糕的质量  
-normal quality - 普通的质量  
 
 ## 色彩风格
 monochrome - 单色  

@@ -15,8 +15,28 @@
 
 ## 简易服饰的提示词尝试
 若成功实现简易服饰的固定，则做一个可以支持固定化的服饰提示词汇总  
+图章模式尝试: https://civitai.com/models/24833/minimalist-anime-style
 
 ## 简易服饰参考
 服饰简化(只有纯色和阴影): https://civitai.com/images/1470378?period=AllTime&periodMode=published&sort=Newest&view=categories&modelVersionId=24519&modelId=20606&postId=375022  
 
 服饰简化参考: https://civitai.com/images/1187066?period=AllTime&periodMode=published&sort=Newest&view=categories&modelVersionId=98112&modelId=92027&postId=310232
+
+## 简易服饰绘制策略
+尝试记录1
+正向提示词:  
+需要重点突出的人 + 人物特征/元素 + 人物动态 + 服饰整体 + 服饰细节元素  
+```
+masterpiece,best quality,high-definition details,ultra-detailed,
+(all clothes configuration:1.15),(character sheet:1.3),beautiful detailed eyes,solo,standing,
+1girl,cute,white skin,round face,(brown eyes:1.2),teenage,tall,skinny,medium breasts,(pure dark gray t-shirt,pure black pants:1.2),short straight hair,tall,
+cohesive background,ray tracing,cohesive background,masterpiece,best quality
+```
+
+负面提示词:
+```
+
+```
+
+使用标准立绘
+
