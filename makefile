@@ -7,7 +7,7 @@ sd:
 # 插件列表地址: https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/Extensions-index.md
 sd-plugin:
 	cd tools/stable-diffusion-webui/extensions && \
-	git clone https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris.git
+	git clone https://github.com/nonnonstop/sd-webui-3d-open-pose-editor
 
 # 模型下载
 model-download:

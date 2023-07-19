@@ -24,3 +24,6 @@
 1. sd 接口化的案例初始案例打通  
 1. bark 服务的封装，作为语音合成的支撑  
 1. 表情包的制作也可以纳入到考量  
+
+对网页的设计也纳入到参考中  
+https://www.nonfungiblelearning.com/blog/how-to-use-stable-diffusion-with-chatgpt-for-web-design

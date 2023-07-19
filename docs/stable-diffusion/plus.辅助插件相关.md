@@ -39,8 +39,19 @@ https://github.com/yfszzx/stable-diffusion-webui-images-browser
 1. 支持 api 调用，可以用于后续的工作流程中  
 
 ## lycoris 插件
+lycoris 作用和 lora 类似，但是是更新的格式和策略  
 参考: https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris  
 文章参考：https://www.bilibili.com/read/cv23595878/  
+
+## 手部畸形修复
+https://github.com/jexom/sd-webui-depth-lib  
+参考: https://www.bilibili.com/video/BV1Mv4y1a7qu  
+
+## openpose 3d
+https://github.com/nonnonstop/sd-webui-3d-open-pose-editor
+备注:  
+1. 使用3d辅助可以极大程度上修复手部描绘问题  
+1. 但与此同时，其操作代价也较高  
 
 ## 待观察的插件
 该类插件可能很好用，但是有很多的 bug
