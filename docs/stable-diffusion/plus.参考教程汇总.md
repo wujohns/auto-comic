@@ -15,3 +15,6 @@ Nenly同学(合集·B站第一套Stable Diffusion系统课程，来了！) - htt
 ## 小文档
 [LyCORIS使用教程](https://www.bilibili.com/read/cv23595878/)  
 [手部畸形修复](https://www.bilibili.com/video/BV1Mv4y1a7qu)  
+
+## 动画制作相关
+[人物序列帧动画制作](https://www.youtube.com/watch?v=Ffl8b_GfJ-M)  

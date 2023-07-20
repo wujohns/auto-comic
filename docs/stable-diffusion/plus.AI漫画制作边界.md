@@ -22,27 +22,6 @@
 
 服饰简化参考: https://civitai.com/images/1187066?period=AllTime&periodMode=published&sort=Newest&view=categories&modelVersionId=98112&modelId=92027&postId=310232
 
-## 简易服饰绘制策略
-尝试记录1
-正向提示词:  
-需要重点突出的人 + 人物特征/元素 + 人物动态 + 服饰整体 + 服饰细节元素  
-```
-masterpiece,best quality,high-definition details,ultra-detailed,
-(character sheet:1.3),beautiful detailed eyes,solo,standing,
-1girl,cute,white skin,round face,(brown eyes:1.2),teenage,tall,skinny,medium breasts,(pure white t-shirt,pure black pants:1.2),short straight black hair,tall,
-ray tracing,(brown background:1.5),simple background,masterpiece,best quality
-```
-
-负面提示词:
-```
-nsfw,
-duplicate,mutated hands,poorly drawn hands,bad anatomy,bad proportions,
-extra limbs,extra legs,missing arms,fused fingers,too many fingers,
-bad hands,missing fingers,extra arms and legs,unclear eyes,extra digit,bag,(holding weapon:1.2),gloves,(word or picture on t-shirt:1.2),coat,sleeve,detached sleeves, 
-nsfw
-```
-
-seed: 4152762521
 
 一些问题与技巧汇总:  
 1. 对于 flat2DAnimerge 这个模型来说，纯色背景较难实现  
