@@ -7,7 +7,7 @@ sd:
 # 插件列表地址: https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/Extensions-index.md
 sd-plugin:
 	cd tools/stable-diffusion-webui/extensions && \
-	git clone https://github.com/nonnonstop/sd-webui-3d-open-pose-editor
+	git clone https://github.com/Uminosachi/sd-webui-inpaint-anything
 
 # 模型下载
 model-download:
@@ -37,19 +37,25 @@ booru-download:
 # controlnet 主模型下载
 controlnet-download:
 	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/models && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble.pth && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg.pth
+# wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth && \
+# wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth && \
+# wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth && \
+# wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth && \
+# wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble.pth && \
+# wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth && \
 
 # controlnet 辅助模型下载
 cdownload:
-	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/annotator/downloads/midas && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet/resolve/main/annotator/ckpts/dpt_hybrid-midas-501f0c75.pt
+	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/annotator/downloads/oneformer/ && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/Annotators/resolve/main/250_16_swin_l_oneformer_ade20k_160k.pth
 
 # 方法算法依赖的模型下载
 up-download:
 	cd tools/stable-diffusion-webui/models/RealESRGAN && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth
+
+# sam 模型下载
+sam-download:
+	cd tools/stable-diffusion-webui/models/sam && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth

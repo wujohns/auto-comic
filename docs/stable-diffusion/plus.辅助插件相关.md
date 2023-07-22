@@ -20,6 +20,7 @@ tag自动补全: https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 1. 微软自带的中文输入法在该插件上表现有较大的问题(无法唤起提示窗)  
 
 ## 抠图插件
+人物抠图:  
 参考: https://zhuanlan.zhihu.com/p/632888046  
 https://github.com/AUTOMATIC1111/stable-diffusion-webui-rembg  
 
@@ -27,6 +28,13 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui-rembg
 1. 需要手动安装 python 包 rembg 以及 onnxruntime  
 1. 该功能属于 `附加功能` 板块  
 1. 部分模型需要手动下载(可以参考切换抠图模型时的命令行的信息)    
+
+基于 segement-anything 的抠图(和重绘配合有较好的效果):  
+参考1: https://github.com/continue-revolution/sd-webui-segment-anything  
+参考2: https://github.com/Uminosachi/sd-webui-inpaint-anything  
+
+备注:  
+1. 这两个插件是相互配合的，可以实现较为顺滑的流程衔接  
 
 ## 历史图片生成查看
 https://github.com/yfszzx/stable-diffusion-webui-images-browser  

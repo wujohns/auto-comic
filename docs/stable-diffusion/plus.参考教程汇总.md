@@ -18,3 +18,10 @@ Nenly同学(合集·B站第一套Stable Diffusion系统课程，来了！) - htt
 
 ## 动画制作相关
 [人物序列帧动画制作](https://www.youtube.com/watch?v=Ffl8b_GfJ-M)  
+
+## 重绘相关
+[controlnet局部重绘](https://www.bilibili.com/video/BV1hP411y7hg)  
+[利用GroundingDINO+SAM快速修改图片局部的方法](https://www.bilibili.com/video/BV1Hh411j7b2)  
+
+## 场景绘制
+[ai制作游戏场景](https://www.bilibili.com/video/BV1Xu411s7Zt)  
