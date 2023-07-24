@@ -18,6 +18,7 @@ Nenly同学(合集·B站第一套Stable Diffusion系统课程，来了！) - htt
 
 ## 动画制作相关
 [人物序列帧动画制作](https://www.youtube.com/watch?v=Ffl8b_GfJ-M)  
+[动态效果增加](https://www.bilibili.com/video/BV1gk4y1V7vY)  
 
 ## 重绘相关
 [controlnet局部重绘](https://www.bilibili.com/video/BV1hP411y7hg)  

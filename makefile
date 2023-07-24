@@ -12,7 +12,7 @@ sd-plugin:
 # 模型下载
 model-download:
 	cd tools/stable-diffusion-webui/models/Stable-diffusion && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/103436 -O ./flat2DAnimerge_v30.safetensors
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-nonema-pruned.safetensors -O ./v2-1_768-nonema-pruned.safetensors
 
 # vae 下载
 vae-download:
@@ -28,6 +28,11 @@ lora-download:
 lyco-download:
 	cd tools/stable-diffusion-webui/models/LyCORIS && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/110362
+
+# text embedding 下载
+ti-download:
+	cd tools/stable-diffusion-webui/embeddings && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://civitai.com/api/download/models/2786 -O ./WEBUI.pt
 
 # 反向推理 pt 下载
 booru-download:
@@ -49,6 +54,12 @@ controlnet-download:
 cdownload:
 	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/annotator/downloads/oneformer/ && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/Annotators/resolve/main/250_16_swin_l_oneformer_ade20k_160k.pth
+
+# contorlnet for sd2.1 下载
+controlnet2:
+	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/models && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/thibaud/controlnet-sd21/resolve/main/control_v11p_sd21_scribble.safetensors && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/thibaud/controlnet-sd21/raw/main/control_v11p_sd21_scribble.yaml
 
 # 方法算法依赖的模型下载
 up-download:

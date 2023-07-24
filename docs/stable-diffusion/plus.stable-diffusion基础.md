@@ -29,3 +29,4 @@
 整体结构: https://www.ithome.com/0/668/981.htm  
 不同的训练方式: https://zhuanlan.zhihu.com/p/611310582  
 controlnet 原理：https://juejin.cn/post/7210369671656505399  
+详细的视频讲解: https://www.bilibili.com/video/BV1x8411m76H  
