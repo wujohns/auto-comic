@@ -70,3 +70,9 @@ up-download:
 sam-download:
 	cd tools/stable-diffusion-webui/models/sam && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+
+# groundingdino 模型下载
+groundingdino-download:
+	cd tools/stable-diffusion-webui/extensions/sd-webui-segment_anything/models/grounding-dino && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swinb_cogcoor.pth && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swint_ogc.pth

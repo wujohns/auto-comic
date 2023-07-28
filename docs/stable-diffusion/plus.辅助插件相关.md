@@ -35,6 +35,9 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui-rembg
 
 备注:  
 1. 这两个插件是相互配合的，可以实现较为顺滑的流程衔接  
+1. segement-anything 模型存放位置为 ${sd-webui}/models/sam  
+1. GroundingDINO 模型存放位置为 ${sd-webui}/extensions/sd-webui-segment-anything/models/grounding-dino  
+1. 缺失的模型可以按照webui上的关键字+huggingface进行搜索，然后手动下载  
 
 ## 历史图片生成查看
 https://github.com/yfszzx/stable-diffusion-webui-images-browser  
