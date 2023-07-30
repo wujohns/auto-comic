@@ -42,7 +42,8 @@ booru-download:
 # controlnet 主模型下载
 controlnet-download:
 	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/models && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg.pth
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.pth
+#	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg.pth && \
 # wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth && \
 # wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth && \
 # wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth && \
@@ -51,15 +52,28 @@ controlnet-download:
 # wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth && \
 
 # controlnet 辅助模型下载
+# cdownload:
+# 	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/annotator/downloads/oneformer/ && \
+# 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/Annotators/resolve/main/250_16_swin_l_oneformer_ade20k_160k.pth
+
+# cdownload:
+# 	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/annotator/clip_vision/ && \
+# 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/pytorch_model.bin
+
 cdownload:
-	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/annotator/downloads/oneformer/ && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/Annotators/resolve/main/250_16_swin_l_oneformer_ade20k_160k.pth
+	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/annotator/downloads/lama/ && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/lllyasviel/Annotators/resolve/main/ControlNetLama.pth
 
 # contorlnet for sd2.1 下载
 controlnet2:
 	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/models && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/thibaud/controlnet-sd21/resolve/main/control_v11p_sd21_scribble.safetensors && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/thibaud/controlnet-sd21/raw/main/control_v11p_sd21_scribble.yaml
+
+# controlnet for t2i 下载
+controlnet-t2i:
+	cd tools/stable-diffusion-webui/extensions/sd-webui-controlnet/models && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_color_sd14v1.pth
 
 # 方法算法依赖的模型下载
 up-download:

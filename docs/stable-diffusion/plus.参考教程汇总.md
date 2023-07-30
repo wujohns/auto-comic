@@ -27,3 +27,4 @@ Nenly同学(合集·B站第一套Stable Diffusion系统课程，来了！) - htt
 
 ## 场景绘制
 [ai制作游戏场景](https://www.bilibili.com/video/BV1Xu411s7Zt)  
+[人物背景生成与Tile模型重绘](https://www.bilibili.com/video/BV1xM4y147hy)  
