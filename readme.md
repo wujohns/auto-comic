@@ -26,4 +26,8 @@
 1. 表情包的制作也可以纳入到考量  
 
 对网页的设计也纳入到参考中  
-https://www.nonfungiblelearning.com/blog/how-to-use-stable-diffusion-with-chatgpt-for-web-design
+https://www.nonfungiblelearning.com/blog/how-to-use-stable-diffusion-with-chatgpt-for-web-design  
+
+一些计划变动:  
+1. 目前社区有较为完善的开源项目可供直接使用: https://tw8go59wbr6.feishu.cn/docx/FB57d8hVPoGhZ5xpUYwciGGvngb  
+1. 现在采用先用社区开源项目的方式推进，后续再做私有化定制处理  

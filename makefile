@@ -3,6 +3,10 @@ sd:
 	cd tools/stable-diffusion-webui && \
 	python launch.py --listen --xformers --api --no-half
 
+bark:
+	cd tools/Bark-Voice-Cloning && \
+	python app.py
+
 # 给 sd 安装插件
 # 插件列表地址: https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/Extensions-index.md
 sd-plugin:
