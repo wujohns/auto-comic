@@ -1,7 +1,7 @@
 # 启动 sd(由于显卡版本过老用的是p40，不支持半精度，所以 --no-half)
 sd:
 	cd tools/stable-diffusion-webui && \
-	python launch.py --listen --xformers --api --no-half
+	python launch.py --listen --xformers --api --no-half --theme=dark
 
 bark:
 	cd tools/Bark-Voice-Cloning && \
@@ -11,7 +11,7 @@ bark:
 # 插件列表地址: https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/Extensions-index.md
 sd-plugin:
 	cd tools/stable-diffusion-webui/extensions && \
-	git clone https://github.com/Uminosachi/sd-webui-inpaint-anything
+	git clone https://github.com/canisminor1990/sd-webui-lobe-theme
 
 # 模型下载
 model-download:
