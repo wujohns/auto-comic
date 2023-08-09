@@ -1,7 +1,11 @@
 # 启动 sd(由于显卡版本过老用的是p40，不支持半精度，所以 --no-half)
 sd:
 	cd tools/stable-diffusion-webui && \
-	python launch.py --listen --xformers --api --no-half --theme=dark
+	python launch.py --listen --xformers --api --no-half --no-half-vae --theme=dark
+
+sd-share:
+	cd tools/stable-diffusion-webui && \
+	python launch.py --xformers --no-half --no-half-vae --theme=dark --share
 
 bark:
 	cd tools/Bark-Voice-Cloning && \
@@ -11,17 +15,22 @@ bark:
 # 插件列表地址: https://raw.githubusercontent.com/wiki/AUTOMATIC1111/stable-diffusion-webui/Extensions-index.md
 sd-plugin:
 	cd tools/stable-diffusion-webui/extensions && \
-	git clone https://github.com/canisminor1990/sd-webui-lobe-theme
+	git clone https://github.com/wcde/sd-webui-refiner
 
 # 模型下载
 model-download:
 	cd tools/stable-diffusion-webui/models/Stable-diffusion && \
-	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-nonema-pruned.safetensors -O ./v2-1_768-nonema-pruned.safetensors
+	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors 
 
 # vae 下载
 vae-download:
 	cd tools/stable-diffusion-webui/models/VAE && \
 	wget -e "https_proxy=http://192.168.101.216:7890" https://huggingface.co/swl-models/ClearVAE/resolve/main/ClearVAE.safetensors
+
+# sdxl vae 模型下载
+sdxl-vae:
+	cd tools/stable-diffusion-webui/models/VAE-approx && \
+	wget -e "https_proxy=http://192.168.101.216:7890" https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/download/v1.0.0-pre/vaeapprox-sdxl.pt
 
 # lora 下载
 lora-download:

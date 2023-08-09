@@ -23,7 +23,7 @@
 1. vae - 作用于 `Autoencoder Decoder` 部分，主要会影响画面 温度/锐度/色彩  
 1. controlnet - 作用于 `UNet + Scheduler` 部分，虽然策略上和 lora 类似采用的是相加策略，但是计算机制由所区别，主要用于做精细化控制(动作)  
 
-这里没有提到 hypernetwork 需要在后续进一步确认，目前仅知到其风评不佳    
+这里没有提到 hypernetwork 需要在后续进一步确认，目前仅知到其风评不佳  
 
 ## 参考
 整体结构: https://www.ithome.com/0/668/981.htm  

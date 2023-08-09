@@ -1,5 +1,6 @@
 # 辅助插件相关
-这里整理一些常用的辅助插件，用于提高效率
+这里整理一些常用的辅助插件，用于提高效率  
+插件列表: https://gitcode.net/rubble7343/sd-webui-extensions/raw/master/index.json
 
 ## 中文翻译
 纯中文: https://github.com/dtlnor/stable-diffusion-webui-localization-zh_CN  
@@ -63,6 +64,9 @@ https://github.com/nonnonstop/sd-webui-3d-open-pose-editor
 备注:  
 1. 使用3d辅助可以极大程度上修复手部描绘问题  
 1. 但与此同时，其操作代价也较高  
+
+## sdxl 相关
+Refiner(减少sdxl切换时间): https://github.com/wcde/sd-webui-refiner
 
 ## 待观察的插件
 该类插件可能很好用，但是有很多的 bug
