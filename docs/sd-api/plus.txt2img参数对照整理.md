@@ -49,10 +49,11 @@ txt2img 请求参数汇总:
   "seed_resize_from_h": -1,   // 差异种子范围(-1为全图)，默认为 -1
   "seed_resize_from_w": -1,   // 差异种子范围(-1为全图)，默认为 -1
 
-  // 覆盖设定，默认为 {}
+  // 覆盖设定，默认为 {}, 并使用当前系统的默认设置
   "override_settings": {
     "sd_model_checkpoint": "darkSushiMixMix_225D.safetensors [cca17b08da]",   // 基础模型配置
-    "sd_vae": "animevae.pt"  // vae 配置
+    "sd_vae": "animevae.pt",        // vae 配置
+    "CLIP_stop_at_last_layers": 1,  // clip skip 设置
   },
   "override_settings_restore_afterwards": false,   // 任务完成后是否恢复设定(待验证)，默认为 true
   // 普通绘制流程相关参数 end -----------------------------------------------------------
@@ -102,3 +103,5 @@ txt2img 请求参数汇总:
 1. 整理一份截图，作为映射关系对应的图像化指明  
 1. 整理实际业务中会用到的请求数据案例，作为后续开发的参考  
 1. 脚本与插件的部分采用单独分析的方法进行确认  
+
+style 保存的信息有限，无法作为足够的参考

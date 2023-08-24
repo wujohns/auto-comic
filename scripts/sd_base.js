@@ -7,11 +7,14 @@
 const fs = require('fs')
 const path = require('path')
 const { convertImg } = require('../libs/utils')
-const { getOptions } = require('../libs/sd_api')
+const { getOptions, sd15Txt2img } = require('../libs/sd_api')
 
-// TODO 先尝试无授权的实验
 const run = async () => {
   const options = await getOptions()
   console.log(options)
+
+  // await sd15Txt2img({
+
+  // })
 }
 run().then(() => process.exit(0))

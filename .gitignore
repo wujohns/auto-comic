@@ -1,5 +1,7 @@
 tools/stable-diffusion-webui
 tools/Bark-Voice-Cloning
 .vscode/
+tmp
 node_modules/
 accounts.md
+temp/
