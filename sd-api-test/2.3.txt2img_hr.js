@@ -28,6 +28,5 @@ const run = async () => {
   fs.removeSync(savePath)
 
   convertImg(resData.images[0], savePath)
-  console.log(resData)
 }
 run().then(() => process.exit(0))
