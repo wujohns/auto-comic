@@ -24,13 +24,10 @@ exports.getOptions = async () => {
 }
 
 /**
- * TODO: 目前把参数写死，后续再放宽参数
  * sd 1.5 的 txt2img 调用
+ * @param data - 调用参数
  */
-exports.sd15Txt2img = async () => {
-  const data = {
-    
-  }
+exports.sd15Txt2img = async (data) => {
   const res = await doReq(
     Consts.sdBaseURL,
     {
