@@ -16,7 +16,7 @@
 {
   // 高清修复相关参数 start -----------------------------------------------------
   "enable_hr": false,           // 是否开启高清修复，默认为 false
-  "denoising_strength": 0,      // 去噪强度/重绘幅度，默认为 0        TODO: 该参数需要进行实际测试验证(构建对应的测试用例进行检验)
+  "denoising_strength": 0,      // 去噪强度/重绘幅度(已经过实际测试确认)，默认为 0
   "hr_scale": 2,                // 高清放大倍率，默认为 2
   "hr_upscaler": "Latent",      // 放大算法，默认为 None
   "hr_second_pass_steps": 20,   // 采样次数，默认为 0
