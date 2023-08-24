@@ -82,12 +82,12 @@ txt2img 请求参数汇总:
   "firstphase_width": 0,
   "firstphase_height": 0,
 
-  // 图片保存相关(api 调用默认不保存)
+  // 图片保存相关(api 调用默认不保存，该部分保持默认即可)
   "do_not_save_samples": false,   // 将图片保存到子目录，只有当 save_image 为 true 时才会生效，默认为 false
   "do_not_save_grid": false,      // 将宫格图保存到子目录，只有当 save_image 为 true 时才会生效，默认为 false
   "save_images": false,           // 对上述两个参数统一设定（该参数优先级最高），默认为 false
 
-  // 该参数功能待定
+  // 在接口调用的结果中是否返回图片信息，默认为 true
   "send_images": true,
 
   // 非重要参数部分 end ---------------------------------------------------

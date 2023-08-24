@@ -18,16 +18,17 @@ exports.getOptions = async () => {
       method: 'GET',
       params: {},
       data: {}
-    }
+    },
+    Consts.proxy
   )
   return res.data
 }
 
 /**
- * sd 1.5 的 txt2img 调用
+ * sd 的 txt2img 调用
  * @param data - 调用参数
  */
-exports.sd15Txt2img = async (data) => {
+exports.txt2img = async (data) => {
   const res = await doReq(
     Consts.sdBaseURL,
     {

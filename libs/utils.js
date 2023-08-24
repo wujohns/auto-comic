@@ -4,9 +4,11 @@
  * @author nobody
  * @date 23/08/24
  */
+const fs = require('fs')
 const axios = require('axios')
 const HttpsProxyAgent = require('https-proxy-agent')
 
+// 发送请求
 exports.doReq = async (baseURL, config, proxy) => {
   const doReqOri = axios.create({
     baseURL,
@@ -23,7 +25,7 @@ exports.doReq = async (baseURL, config, proxy) => {
   return res
 }
 
-exports.convertImg = async (base64Str) => {
-  // base64 转换为图片并保存
-  // TODO 需要完善
+// 将 base64 以图片方式存储到指定路径
+exports.convertImg = async (base64Str, savePath) => {
+  // TODO
 }
