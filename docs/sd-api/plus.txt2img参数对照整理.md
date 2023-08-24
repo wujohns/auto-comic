@@ -1,16 +1,17 @@
 # txt2img 参数对照整理
-TODO 这里需要整理出 txt2img 接口处理中的参数对应关系
+这里对 txt2img 的接口做整理作为后续开发的参考
 
-相关单元测试可以参考:  
-extensions/sd-webui-controlnet/tests/web_api/txt2img_test.py
+# TODO
+1. 整理实际业务中会用到的请求数据案例，作为后续开发的参考  
+1. 脚本与插件的部分采用单独分析的方法进行确认  
 
-直接按照接口路径搜索可以查看其具体代码实现  
-/sdapi/v1/txt2img
+## 线索追踪策略
+1. 相关单元测试 extensions/sd-webui-controlnet/tests/web_api/txt2img_test.py  
+1. 直接按照接口路径搜索 /sdapi/v1/txt2img  
+1. 原理性质的参考资料: [stable diffusion webui如何工作以及采样方法的对比](https://zhuanlan.zhihu.com/p/612572004)  
 
-详细参数完整参考:  
-https://zhuanlan.zhihu.com/p/612572004
-
-txt2img 请求参数汇总:
+## txt2img 请求参数汇总
+结构与说明如下
 ```json
 {
   // 高清修复相关参数 start -----------------------------------------------------
@@ -55,7 +56,7 @@ txt2img 请求参数汇总:
     "sd_vae": "animevae.pt",        // vae 配置
     "CLIP_stop_at_last_layers": 1,  // clip skip 设置
   },
-  "override_settings_restore_afterwards": false,   // 任务完成后是否恢复设定(待验证)，默认为 true
+  "override_settings_restore_afterwards": false,   // 任务完成后是否恢复设定，默认为 true，设置为 false 时会修改当前 webui 的设定
   // 普通绘制流程相关参数 end -----------------------------------------------------------
 
   // 采样方法技术类参数 start -----------------------------------------------------
@@ -95,13 +96,15 @@ txt2img 请求参数汇总:
   // 脚本与插件的调用
   "script_args": [],
   "script_name": "string",
-  "alwayson_scripts": {}
+  "alwayson_scripts": {
+  }
 }
 ```
 
-# TODO
-1. 整理一份截图，作为映射关系对应的图像化指明  
-1. 整理实际业务中会用到的请求数据案例，作为后续开发的参考  
-1. 脚本与插件的部分采用单独分析的方法进行确认  
-
-style 保存的信息有限，无法作为足够的参考
+## 接口调用结构说明
+这里按照对应的功能将接口参数划分为以下几个部分  
+1. 高清修复相关参数 - 依据实际业务需求设定  
+1. 普通绘制相关参数 - 依据实际业务需求设定  
+1. 采样方法技术类参数 - 一般保持默认，除非是为了通过该部分处理特定的美术流程  
+1. 非重要参数 - 保持默认即可  
+1. 脚本与插件的调用参数 - 该部分较为繁琐，会在其他的篇章单独说明  

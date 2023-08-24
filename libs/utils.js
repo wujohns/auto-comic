@@ -12,7 +12,7 @@ const HttpsProxyAgent = require('https-proxy-agent')
 exports.doReq = async (baseURL, config, proxy) => {
   const doReqOri = axios.create({
     baseURL,
-    timeout: 35000,
+    timeout: 350000,
     headers: config.headers
   })
   if (proxy) {
@@ -26,6 +26,7 @@ exports.doReq = async (baseURL, config, proxy) => {
 }
 
 // 将 base64 以图片方式存储到指定路径
-exports.convertImg = async (base64Str, savePath) => {
-  // TODO
+exports.convertImg = (base64Str, savePath) => {
+  const dataBuffer = Buffer.from(base64Str, 'base64')
+  fs.writeFileSync(savePath, dataBuffer)
 }
