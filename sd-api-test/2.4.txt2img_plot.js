@@ -69,8 +69,8 @@ const run = async () => {
       sd_vae: 'animevae.pt',        // vae 配置
       CLIP_stop_at_last_layers: 1,  // clip skip 设置
     },
-    script_name: 'X/Y/Z plot',    // 目前推测名称来自 title
-    script_args: [                // 目前推测参数对应关系为 run 函数中的参数
+    script_name: 'X/Y/Z plot',    // 名称为脚本 title 函数返回值
+    script_args: [                // 参数对应为脚本中 run 函数中的参数
       XYZPlotAvailableScripts.indexOf(XAxisType), XAxisValues, [],
       XYZPlotAvailableScripts.indexOf(YAxisType), '', YAxisValues.split(','),
       XYZPlotAvailableScripts.indexOf(ZAxisType), ZAxisValues, [],
