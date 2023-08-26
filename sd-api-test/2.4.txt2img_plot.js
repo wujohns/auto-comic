@@ -10,6 +10,55 @@ const path = require('path')
 const { convertImg } = require('../libs/utils')
 const { txt2img } = require('../libs/sd_api')
 
+// 在 txt2img 模式下的配置(为了简化这里暂时不加入来自 controlnet 部分的影响)
+// controlnet 对该部分的影响参考 sd-webui-controlnet/scripts/xyz_grid_support.py
+const XYZPlotAvailableScripts = [
+  'Nothing',
+  'Seed',
+  'Var. seed',
+  'Var. strength',
+  'Steps',
+  'Hires steps',
+  'CFG Scale',
+  'Prompt S/R',
+  'Prompt order',
+  'Sampler',
+  'Checkpoint name',
+  'Negative Guidance minimum sigma',
+  'Sigma Churn',
+  'Sigma min',
+  'Sigma max',
+  'Sigma noise',
+  'Schedule type',
+  'Schedule min sigma',
+  'Schedule max sigma',
+  'Schedule rho',
+  'Eta',
+  'Clip skip',
+  'Denoising',
+  'Hires upscaler',
+  'VAE',
+  'Styles',
+  'UniPC Order',
+  'Face restore',
+  'Token merging ratio',
+  'Token merging ratio high-res',
+  'Always discard next-to-last sigma'
+]
+
+const XAxisType = 'Steps'
+const XAxisValues = '8,16'
+const YAxisType = 'Sampler'
+const YAxisValues = 'Euler,DPM++ 2S a Karras'
+const ZAxisType = 'Nothing'
+const ZAxisValues = ''
+
+const drawLegend = true
+const includeLoneImage = false
+const includeSubGrids = false
+const noFixedSeeds = false
+const marginSize = 0
+
 const run = async () => {
   const resData = await txt2img({
     prompt: '1girl',
@@ -22,7 +71,10 @@ const run = async () => {
     },
     script_name: 'X/Y/Z plot',    // 目前推测名称来自 title
     script_args: [                // 目前推测参数对应关系为 run 函数中的参数
-      // TODO
+      XYZPlotAvailableScripts.indexOf(XAxisType), XAxisValues, [],
+      XYZPlotAvailableScripts.indexOf(YAxisType), '', YAxisValues.split(','),
+      XYZPlotAvailableScripts.indexOf(ZAxisType), ZAxisValues, [],
+      drawLegend, includeLoneImage, includeSubGrids, noFixedSeeds, marginSize
     ]
   })
   const fileName = '2.4.txt2img_plot.png'
