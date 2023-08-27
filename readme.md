@@ -31,7 +31,3 @@ https://www.nonfungiblelearning.com/blog/how-to-use-stable-diffusion-with-chatgp
 一些计划变动:  
 1. 目前社区有较为完善的开源项目可供直接使用: https://tw8go59wbr6.feishu.cn/docx/FB57d8hVPoGhZ5xpUYwciGGvngb  
 1. 现在采用先用社区开源项目的方式推进，后续再做私有化定制处理  
-
-## 对 sd-webui 整理TODO
-1. 对扩展内置的特性进行测试性调用  
-1. 补充/验证 lora 特性  

@@ -15,7 +15,7 @@ const { txt2img } = require('../libs/sd_api')
 
 const run = async () => {
   const resData = await txt2img({
-    prompt: '1girl',
+    prompt: '1girl, <lora:anime_minimalist_v1:1>',
     steps: 20,
     seed: 34324235,
     override_settings: {
