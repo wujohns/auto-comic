@@ -1,10 +1,6 @@
 # txt2img 参数对照整理
 这里对 txt2img 的接口做整理作为后续开发的参考
 
-# TODO
-1. 整理实际业务中会用到的请求数据案例，作为后续开发的参考  
-1. 脚本与插件的部分采用单独分析的方法进行确认  
-
 ## 线索追踪策略
 1. 相关单元测试 extensions/sd-webui-controlnet/tests/web_api/txt2img_test.py  
 1. 直接按照接口路径搜索 /sdapi/v1/txt2img  
@@ -92,11 +88,12 @@
 
   // 非重要参数部分 end ---------------------------------------------------
 
-  // 脚本与插件的调用
-  "script_args": [],
-  "script_name": "string",
-  "alwayson_scripts": {
-  }
+  // 脚本调用
+  "script_name": "",    // 调用脚本的名称(脚本 title 函数返回值)
+  "script_args": [],    // 调用脚本的参数(对应为脚本中 run 函数中的参数)
+
+  // 插件调用
+  "alwayson_scripts": {}  // 调用插件与参数(其中 key 为插件名称，value 为插件参数)
 }
 ```
 
@@ -106,7 +103,15 @@
 1. 普通绘制相关参数 - 依据实际业务需求设定  
 1. 采样方法技术类参数 - 一般保持默认，除非是为了通过该部分处理特定的美术流程  
 1. 非重要参数 - 保持默认即可  
-1. 脚本与插件的调用参数 - 该部分较为繁琐，会在其他的篇章单独说明  
+1. 脚本调用参数 - 具体参考 [plus.接口调用脚本功能.md](/docs/sd-api/plus.接口调用脚本功能.md)  
+1. 插件调用参数 - 具体参考 [plus.接口调用插件功能.md](/docs/sd-api/plus.接口调用插件功能.md)
 
-## 调用案例
-[]() - 
+
+## 调用案例汇总
+[2.1.txt2img_base.js](/sd-api-test/2.1.txt2img_base.js) - 基础调用  
+[2.2.txt2img_settings.js](/sd-api-test/2.2.txt2img_settings.js) - 模型配置  
+[2.3.txt2img_hr.js](/sd-api-test/2.3.txt2img_hr.js) - 高清重绘  
+[2.4.txt2img_plot.js](/sd-api-test/2.4.txt2img_plot.js) - xyz plot 脚本  
+[2.5.txt2img_controlnet.js](/sd-api-test/2.5.txt2img_controlnet.js) - controlnet 插件使用  
+[3.1.txt2img_sdxl.js](/sd-api-test/3.1.txt2img_sdxl.js) - sdxl 基础使用  
+[3.2.txt2img_sdxl_refiner.js](/sd-api-test/3.2.txt2img_sdxl_refiner.js) - sdxl refiner 使用

@@ -33,7 +33,7 @@ class Script(scripts.Script):
 ```
 其中 `run` 函数依赖的参数值即为调用接口时需要传递给 `script_args` 的值  
 
-## 关键性代码片段
+## 关键代码片段
 具体使用时需要对 `<webui工程目录>/scripts/xyz_grid.py` 的源码做详细查看或打点调试，其中对参数格式影响的关键性片段如下:  
 ```py
 # <webui工程目录>/scripts/xyz_grid.py

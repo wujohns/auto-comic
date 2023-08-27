@@ -30,3 +30,9 @@ exports.convertImg = (base64Str, savePath) => {
   const dataBuffer = Buffer.from(base64Str, 'base64')
   fs.writeFileSync(savePath, dataBuffer)
 }
+
+// 将图片转换为 base64
+exports.convertBase64 = (imgPath) => {
+  const base64 = fs.readFileSync(imgPath, 'base64')
+  return base64
+}

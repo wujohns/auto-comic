@@ -77,10 +77,10 @@ const run = async () => {
       drawLegend, includeLoneImage, includeSubGrids, noFixedSeeds, marginSize
     ]
   })
+
   const fileName = '2.4.txt2img_plot.png'
   const savePath = path.join(__dirname, `../temp/${ fileName }`)
   fs.removeSync(savePath)
-
   convertImg(resData.images[0], savePath)
 }
 run().then(() => process.exit(0))
