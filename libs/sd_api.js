@@ -40,3 +40,20 @@ exports.txt2img = async (data) => {
   )
   return res.data
 }
+
+/**
+ * sd 的 controlnet 预处理调用
+ * @param data - 调用参数
+ */
+exports.controlnetDetect = async (data) => {
+  const res = await doReq(
+    Consts.sdBaseURL,
+    {
+      url: '/controlnet/detect',
+      method: 'POST',
+      params: {},
+      data
+    }
+  )
+  return res.data
+}

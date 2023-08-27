@@ -11,7 +11,6 @@ const path = require('path')
 const { convertImg, convertBase64 } = require('../libs/utils')
 const { txt2img } = require('../libs/sd_api')
 
-// TODO 尝试摸索单独调用预处理功能
 const run = async () => {
   const cannyOriPath = path.join(__dirname, './controlnet/canny-ori.png')
   const resData = await txt2img({
