@@ -57,3 +57,19 @@ exports.controlnetDetect = async (data) => {
   )
   return res.data
 }
+
+/**
+ * sd 的 interrupt 调用
+ */
+exports.interrupt = async () => {
+  const res = await doReq(
+    Consts.sdBaseURL,
+    {
+      url: '/sdapi/v1/interrupt',
+      method: 'POST',
+      params: {},
+      data: {}
+    }
+  )
+  return res.data
+}
