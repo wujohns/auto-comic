@@ -19,7 +19,8 @@ const run = async () => {
     steps: 20,
     seed: 34324235,
     override_settings: {
-      sd_model_checkpoint: 'flat2DAnimerge_v30.safetensors [5dd56bfa12]',   // 基础模型配置
+      // sd_model_checkpoint: 'flat2DAnimerge_v30.safetensors [5dd56bfa12]',   // 基础模型配置
+      sd_model_checkpoint: 'flat2DAnimerge_v30.safetensors',   // 基础模型配置
       sd_vae: 'animevae.pt',        // vae 配置
       CLIP_stop_at_last_layers: 2,  // clip skip 设置
     },
