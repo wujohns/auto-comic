@@ -20,6 +20,7 @@ const run = async () => {
     init_images: [img2imgBase64],   // 用于重绘的图片
 
     mask: maskBase64,
+    inpaint_full_res: 0,      // 采取全图重绘策略
 
     prompt: '1girl',
     steps: 20,
