@@ -42,6 +42,23 @@ exports.txt2img = async (data) => {
 }
 
 /**
+ * sd 的 img2img 调用
+ * @param data - 调用参数
+ */
+exports.img2img = async (data) => {
+  const res = await doReq(
+    Consts.sdBaseURL,
+    {
+      url: '/sdapi/v1/img2img',
+      method: 'POST',
+      params: {},
+      data
+    }
+  )
+  return res.data
+}
+
+/**
  * sd 的 controlnet 预处理调用
  * @param data - 调用参数
  */

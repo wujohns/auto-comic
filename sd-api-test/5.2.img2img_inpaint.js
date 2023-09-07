@@ -1,9 +1,9 @@
 /**
- * sd 图生图接口基础案例
- * 不加 mask 的场景
+ * sd 图生图接口 mask 基础案例
+ * 对应 inpaint 场景
  *
  * @author nobody
- * @date 23/09/06
+ * @date 23/09/07
  */
 const fs = require('fs-extra')
 const path = require('path')
@@ -13,8 +13,13 @@ const { img2img } = require('../libs/sd_api')
 const run = async () => {
   const img2imgPath = path.join(__dirname, './img2img/5.1.img2img_init.png')
   const img2imgBase64 = convertBase64(img2imgPath)
+  const maskPath = path.join(__dirname, './img2img/5.2.img2img_mask.png')
+  const maskBase64 = convertBase64(maskPath)
+
   const resData = await img2img({
     init_images: [img2imgBase64],   // 用于重绘的图片
+
+    mask: maskBase64,
 
     prompt: '1girl',
     steps: 20,
@@ -28,7 +33,7 @@ const run = async () => {
     override_settings_restore_afterwards: false
   })
 
-  const fileName = '5.1.img2img_base.png'
+  const fileName = '5.2.img2img_inpaint.png'
   const savePath = path.join(__dirname, `../temp/${ fileName }`)
   fs.removeSync(savePath)
 
