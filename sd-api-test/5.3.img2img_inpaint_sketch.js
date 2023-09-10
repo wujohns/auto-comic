@@ -1,6 +1,6 @@
 /**
  * sd 图生图接口 mask 基础案例
- * 对应 inpaint 场景
+ * 对应 inpaint sketch 场景
  *
  * @author nobody
  * @date 23/09/07
@@ -11,8 +11,11 @@ const { convertImg, convertBase64 } = require('../libs/utils')
 const { img2img } = require('../libs/sd_api')
 
 const run = async () => {
+  // sketch 模式下蒙版会和原图合并为一张图，这里的图片即为断点调试抽取的叠加后的图
   const img2imgPath = path.join(__dirname, './img2img/5.3.img2img_init.png')
   const img2imgBase64 = convertBase64(img2imgPath)
+
+  // sketch 模式下蒙版图受透明度影响，这里的图片即为断点调试抽取的有透明度的蒙版
   const maskPath = path.join(__dirname, './img2img/5.3.img2img_mask.png')
   const maskBase64 = convertBase64(maskPath)
 

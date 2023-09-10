@@ -15,6 +15,7 @@ exports.getOptions = async () => {
     Consts.sdBaseURL,
     {
       url: '/sdapi/v1/options',
+      // url: '/sdapi/v1/progress',
       method: 'GET',
       params: {},
       data: {}
