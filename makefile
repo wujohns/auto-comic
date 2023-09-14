@@ -3,6 +3,10 @@ sd:
 	cd tools/stable-diffusion-webui && \
 	python launch.py --listen --xformers --api --no-half --no-half-vae --theme=dark
 
+sd-auth:
+	cd tools/stable-diffusion-webui && \
+	python launch.py --listen --xformers --api --api-auth=kk:mm --no-half --no-half-vae --theme=dark
+
 sd-share:
 	cd tools/stable-diffusion-webui && \
 	python launch.py --xformers --no-half --no-half-vae --theme=dark --share

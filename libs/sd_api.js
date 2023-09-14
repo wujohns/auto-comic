@@ -28,17 +28,17 @@ exports.getOptions = async () => {
 /**
  * sd 的 txt2img 调用
  * @param data - 调用参数
+ * @param auth - api 鉴权
  */
-exports.txt2img = async (data) => {
-  const res = await doReq(
-    Consts.sdBaseURL,
-    {
-      url: '/sdapi/v1/txt2img',
-      method: 'POST',
-      params: {},
-      data
-    }
-  )
+exports.txt2img = async (data, auth) => {
+  const config = {
+    url: '/sdapi/v1/txt2img',
+    method: 'POST',
+    params: {},
+    data
+  }
+  if (auth) config.auth = auth
+  const res = await doReq(Consts.sdBaseURL, config)
   return res.data
 }
 
