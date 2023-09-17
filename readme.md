@@ -31,3 +31,7 @@ https://www.nonfungiblelearning.com/blog/how-to-use-stable-diffusion-with-chatgp
 一些计划变动:  
 1. 目前社区有较为完善的开源项目可供直接使用: https://tw8go59wbr6.feishu.cn/docx/FB57d8hVPoGhZ5xpUYwciGGvngb  
 1. 现在采用先用社区开源项目的方式推进，后续再做私有化定制处理  
+
+git lfs clone -c http.proxy="http://127.0.0.1:7990" 
+git lfs clone -c http.proxy="http://192.168.101.216:7890" 
+https://huggingface.co/silk-road/luotuo-bert/resolve/main/pytorch_model.bin

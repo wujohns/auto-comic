@@ -17,6 +17,8 @@ const run = async () => {
   const cannyOriPath = path.join(__dirname, './controlnet/canny-ori.png')
   const resData = await controlnetDetect({
     controlnet_module: 'canny',   // 预处理器
+    // controlnet_module: 'invert (from white bg & black line)',
+    // controlnet_module: 'invert',
     controlnet_input_images: [    // 需要处理的图片(base64)
       convertBase64(cannyOriPath)
     ],

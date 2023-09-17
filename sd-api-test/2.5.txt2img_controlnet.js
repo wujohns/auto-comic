@@ -18,7 +18,8 @@ const run = async () => {
     steps: 20,
     seed: 34324235,
     override_settings: {
-      sd_model_checkpoint: 'darkSushiMixMix_225D.safetensors [cca17b08da]',   // 基础模型配置
+      // sd_model_checkpoint: 'darkSushiMixMix_225D.safetensors [cca17b08da]',   // 基础模型配置
+      sd_model_checkpoint: 'darkSushiMixMix_225D.safetensors',
       sd_vae: 'animevae.pt',        // vae 配置
       CLIP_stop_at_last_layers: 1,  // clip skip 设置
     },
@@ -28,7 +29,9 @@ const run = async () => {
           {
             input_image: convertBase64(cannyOriPath),     // 输入图片
             module: 'canny',                              // 预处理方法(空时为 'none')
-            model: 'control_v11p_sd15_canny [d14c016b]',  // controlnet 模型
+            // module: 'invert (from white bg & black line)',
+            // model: 'control_v11p_sd15_canny [d14c016b]',  // controlnet 模型
+            model: 'control_v11p_sd15_canny',  // controlnet 模型
           }
         ]
       }
