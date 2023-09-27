@@ -1,5 +1,7 @@
 tools/stable-diffusion-webui
 tools/Bark-Voice-Cloning
+tools/lora-scripts
+train-imgs/
 .vscode/
 tmp
 node_modules/
