@@ -6,7 +6,8 @@
  */
 
 exports.Consts = {
-  sdBaseURL: 'http://192.168.101.4:7860',
+  // sdBaseURL: 'http://192.168.101.4:7860',
+  sdBaseURL: 'http://192.168.1.4:7860',
   // proxy: 'http://192.168.101.216:7890'
   proxy: false
 }

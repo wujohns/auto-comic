@@ -1,4 +1,5 @@
 LOCAL_PROXY = http://127.0.0.1:7890
+# LOCAL_PROXY = http://192.168.1.2:7890
 PROXY = http://192.168.101.216:7890
 
 # 启动 sd(由于显卡版本过老用的是p40，不支持半精度，所以 --no-half)
@@ -129,3 +130,7 @@ groundingdino-download:
 	cd tools/stable-diffusion-webui/extensions/sd-webui-segment_anything/models/grounding-dino && \
 	wget -e "https_proxy=${PROXY}" https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swinb_cogcoor.pth && \
 	wget -e "https_proxy=${PROXY}" https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swint_ogc.pth
+
+# rsync 增量同步测试
+sync:
+	rsync -a --progress /root/projects/auto-comic/tools/stable-diffusion-webui/models/Stable-diffusion /root/projects/auto-comic/
