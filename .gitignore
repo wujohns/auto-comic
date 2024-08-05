@@ -1,6 +1,7 @@
 tools/stable-diffusion-webui
 tools/Bark-Voice-Cloning
 tools/lora-scripts
+tools/sd-webui-240802
 train-imgs/
 .vscode/
 tmp
@@ -9,3 +10,5 @@ accounts.md
 temp/
 
 Stable-diffusion
+sd-api-test-240802/.env
+sd-api-test-240802/outputs

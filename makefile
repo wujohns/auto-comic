@@ -1,25 +1,25 @@
-LOCAL_PROXY = http://127.0.0.1:7890
+LOCAL_PROXY = http://192.168.10.100:7890
 # LOCAL_PROXY = http://192.168.1.2:7890
-PROXY = http://192.168.101.216:7890
+PROXY = http://192.168.10.100:7890
 
 # 启动 sd(由于显卡版本过老用的是p40，不支持半精度，所以 --no-half)
 sd:
 	cd tools/stable-diffusion-webui && \
-	python launch.py --listen --xformers --api --no-half --no-half-vae --theme=dark
+	/root/.virtualenvs/auto-comic/bin/python launch.py --listen --xformers --api --no-half --no-half-vae --theme=dark
 
 sd-proxy:
 	export http_proxy=${LOCAL_PROXY} && \
 	export https_proxy=${LOCAL_PROXY} && \
 	cd tools/stable-diffusion-webui && \
-	python launch.py --listen --xformers --api --no-half --no-half-vae --theme=dark
+	/root/.virtualenvs/auto-comic/bin/python launch.py --listen --xformers --api --no-half --no-half-vae --theme=dark
 
 sd-auth:
 	cd tools/stable-diffusion-webui && \
-	python launch.py --listen --xformers --api --api-auth=kk:mm --no-half --no-half-vae --theme=dark
+	/root/.virtualenvs/auto-comic/bin/python launch.py --listen --xformers --api --api-auth=kk:mm --no-half --no-half-vae --theme=dark
 
 sd-share:
 	cd tools/stable-diffusion-webui && \
-	python launch.py --xformers --no-half --no-half-vae --theme=dark --share
+	/root/.virtualenvs/auto-comic/bin/python launch.py --xformers --no-half --no-half-vae --theme=dark --share
 
 bark:
 	cd tools/Bark-Voice-Cloning && \
@@ -134,3 +134,9 @@ groundingdino-download:
 # rsync 增量同步测试
 sync:
 	rsync -a --progress /root/projects/auto-comic/tools/stable-diffusion-webui/models/Stable-diffusion /root/projects/auto-comic/
+
+
+# sd api 相关测试内容
+sdnew:
+	cd tools/sd-webui-240802 && \
+	/root/.virtualenvs/sd-webui-240802/bin/python launch.py --listen --xformers --api --no-half --no-half-vae
