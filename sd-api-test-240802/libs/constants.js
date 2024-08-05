@@ -5,7 +5,7 @@
  * @date 23/09/15
  */
 // 预先处理器部分(预处理器是对图片的预处理，sd1.5 和 sdxl 使用的是相同的预处理器)
-const prepocessorMap = {
+const PrepocessorMap = {
   // 线条
   Canny: [
     { module: 'canny', controlnet_threshold_a: 100, controlnet_threshold_b: 200 },
@@ -28,9 +28,9 @@ const prepocessorMap = {
   // 风格迁移
   // NOTICE: 之前只有 ip-adapter_clip_sd15 现在完全不同
   'IP-Adapter': [
-    { module: 'ip-adapter-auto' },      // 自动选择，但是需要其他的先下载好
+    // { module: 'ip-adapter-auto' },      // 自动选择，但是貌似部分 GPU 无法使用
     { module: 'ip-adapter_clip_h' },
-    { module: 'ip-adapter_puild' },         // 偏向于面部风格 -- TODO 有独特的搭配模型参考: https://github.com/huchenlei/sd-webui-controlnet-evaclip
+    { module: 'ip-adapter_pulid' },         // 偏向于面部风格 -- 有独特的搭配模型参考: https://github.com/huchenlei/sd-webui-controlnet-evaclip
     { module: 'ip-adapter_face_id_plus' },
     { module: 'ip-adapter_face_id' },
     { module: 'ip-adapter_clip_sdxl_plus_vith' },
@@ -39,6 +39,7 @@ const prepocessorMap = {
 
   // 遮罩重绘
   // https://www.bilibili.com/video/BV1pk4y1L7nH
+  // TODO 需要确认实际方法后，再做处理，改写脚本直接进行测试
   Inpaint: [
     { module: 'inpaint_only' },
     { module: 'inpaint_only+lama' },
@@ -74,7 +75,9 @@ const prepocessorMap = {
   NormalMap: [
     { module: 'normal_bae' },
     { module: 'normal_midas', controlnet_threshold_a: 0.4 },
-    { module: 'normal_dsine', controlnet_threshold_a: 60, controlnet_threshold_b: 5 }
+
+    // APIBUG: 这个为新增，但是接口调用时会有问题(图片处理方式导致的参数不一致)
+    // { module: 'normal_dsine', controlnet_threshold_a: 60, controlnet_threshold_b: 5 }
   ],
 
   // 姿态控制
@@ -87,8 +90,8 @@ const prepocessorMap = {
     { module: 'dw_openpose_full' },
 
     // 以下为新增
-    { module: 'densepose_parula(black bg & blue torso)' },
-    { module: 'densepose(pruple bg & purple torso)' },
+    { module: 'densepose_parula' },   // { module: 'densepose_parula(black bg & blue torso)' },
+    { module: 'densepose' },          // { module: 'densepose(pruple bg & purple torso)' },
     { module: 'animal_openpose' }
   ],
 
@@ -144,11 +147,12 @@ const prepocessorMap = {
     { module: 'softedge_hed' },
 
     // 以下是新增
-    { module: 'softedge_teed', controlnet_threshold_a: 2 },
-    { module: 'softedge_anyline', controlnet_threshold_a: 2 }
+    // APIBUG 接口层未适配(图片处理方式导致的参数不一致)
+    // { module: 'softedge_teed', controlnet_threshold_a: 2 },
+    // { module: 'softedge_anyline', controlnet_threshold_a: 2 }
   ],
 
-  // TODO 新增的特性 -- 需要查询资料
+  // 主要服务于 animatediff 流程，用于视频工作流
   SparseCtrl: [
     { module: 'scribble_pidinet' },
     { module: 'scribble_xdog', controlnet_threshold_a: 32 },
@@ -227,6 +231,9 @@ exports.Consts = {
     'ScuNET PSNR',
     'SwinIR_4x'
   ],
+
+  // sd controlnet 预处理器信息
+  PrepocessorMap,
 
   // sd 1.5 的 controlnet 列表
   SD15ControlNetList: [

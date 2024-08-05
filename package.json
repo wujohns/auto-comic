@@ -1,9 +1,13 @@
 {
   "dependencies": {
+    "@huggingface/hub": "^0.15.1",
     "axios": "^1.4.0",
     "dotenv": "^16.4.5",
     "fs-extra": "^11.2.0",
     "https-proxy-agent": "^7.0.1",
-    "node-ssh": "^13.2.0"
+    "lodash": "^4.17.21",
+    "node-ssh": "^13.2.0",
+    "nodejs-file-downloader": "^4.13.0",
+    "undici": "^6.19.5"
   }
 }

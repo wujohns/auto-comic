@@ -1,0 +1,114 @@
+[
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11e_sd15_ip2p.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11e_sd15_ip2p.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11e_sd15_shuffle.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11e_sd15_shuffle.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11f1e_sd15_tile.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11f1e_sd15_tile.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11f1p_sd15_depth.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11f1p_sd15_depth.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_canny.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_canny.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_inpaint.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_inpaint.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_lineart.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_lineart.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_mlsd.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_mlsd.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_normalbae.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_normalbae.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_openpose.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_openpose.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_scribble.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_scribble.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_seg.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_seg.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_softedge.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_softedge.yaml"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15s2_lineart_anime.pth"
+  },
+  {
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15s2_lineart_anime.yaml"
+  }
+]
