@@ -32,6 +32,8 @@ const sdxlData = {
   prompt: '1girl',
   steps: 20,
   seed: 34324235,
+  width: 1024,
+  height: 1024,
   sampler_name: 'Euler',
   enable_hr: true,
   hr_scale: 2,

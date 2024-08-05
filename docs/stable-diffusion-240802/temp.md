@@ -3,39 +3,6 @@ webui 生产镜像主要锁定以下内容:
 1. 确保采样方法和高清放大算法依赖的正常  
 1. controlnet 相关  
 
-## 采样方法/高清算法/图生图 依赖准备
-1. 载入 webui 最小化镜像
-2. 执行以下指令，手动下载依赖的模型(原因是webui的缺陷导致无法自动下载):  
-```bash
-# ScuNET
-cd /root/autodl-fs/models
-mkdir ScuNET
-cd ScuNET
-wget -e "https_proxy=http://127.0.0.1:7890" https://github.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_gan.pth -O ./ScuNET.pth
-
-# SwinIR
-cd /root/autodl-fs/models
-mkdir SwinIR
-cd SwinIR
-wget -e "https_proxy=http://127.0.0.1:7890" https://github.com/JingyunLiang/SwinIR/releases/download/v0.0/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth -O ./SwinIR_4x.pth
-```
-3. 执行
-```
-export http_proxy="http://127.0.0.1:7890"
-export https_proxy="http://127.0.0.1:7890"
-```
-启用全局代理，以便于后续启动 stable-diffusion-webui 时其内部初始化下载能正常下载  
-4. 进入到 `stable-diffusion-webui` 目录，执行 `python launch.py --listen --xformers --api --listen --no-hashing --port=6006`，启动 webui  
-5. 配置本项目的 `.env` 中的 `SD_BASEURL` autodl 对应实例的自定义服务链接  
-6. 在本项目中执行:  
-```
-npm install
-node ./test/sampler.js
-node ./test/hr_upscaler.js
-node ./test/img2img.js
-```
-即可自动对全部采样算法和高清算法做检查，检查过程中也会同时下载对应的模型依赖  
-
 ## controlnet 部分
 1. 执行以下指令安装插件:  
 ```bash
