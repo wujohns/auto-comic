@@ -10,6 +10,7 @@ const axios = require('axios')
 const { NodeSSH } = require('node-ssh')
 const { ProxyAgent, fetch } = require('undici')
 require('dotenv').config({ path: path.join(__dirname, '../.env') })
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
 
 // huggingface 自定义 fetch(支持 proxy 特性)
 const hgDispatcher = new ProxyAgent(process.env.HG_RPOXY)
