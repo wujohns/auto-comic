@@ -237,12 +237,22 @@ exports.Consts = {
 
   // sd 1.5 的 controlnet 列表
   SD15ControlNetList: [
-    // TODO 先编写对 controlnet 的预处理的相关脚本
+    // 线条
+    {
+      name: 'Canny',
+      model: 'control_v11p_sd15_canny',
+      prepocessorList: PrepocessorMap['Canny']
+    },
   ],
 
   // sdxl 的 controlnet 列表
   SDXLControlNetList: [
-    // TODO
+    // 线条
+    {
+      name: 'Canny',
+      model: 'bdsqlsz_controlllite_xl_canny',
+      prepocessorList: PrepocessorMap['Canny']
+    }
   ],
 
   // 极端测试相关内容
