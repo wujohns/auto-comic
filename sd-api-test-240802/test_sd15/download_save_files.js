@@ -4,13 +4,8 @@
  * @author nobody
  * @date 24/08/05
  */
-const fs = require('fs')
 const path = require('path')
-const { ProxyAgent, request } = require('undici')
-const { pipeline } = require('stream/promises')
 require('dotenv').config({ path: path.join(__dirname, '../.env') })
-
-const dispatcher = new ProxyAgent(process.env.HG_RPOXY)
 
 const targetDir = path.join(
   __dirname,
@@ -20,29 +15,27 @@ const fileList = require('./download_files.json')
 
 const { Downloader } = require('nodejs-file-downloader')
 const run = async () => {
+  let start = false
   for (const fileInfo of fileList) {
     const { repo, file } = fileInfo
     console.log(`start download file: ${ repo } - ${ file }`)
     const downloadLink = `https://huggingface.co/${ repo }/resolve/main/${ file }`
-    const targetPath = path.join(targetDir, path.basename(file))
-    const downloader = new Downloader({
-      url: downloadLink,
-      directory: targetDir,
-      fileName: path.basename(file),
-      proxy: process.env.HG_RPOXY
-    })
-    await downloader.download()
+    try {
+      if (file === 'control_v11p_sd15_scribble.pth') start = true
+      if (!start) continue
 
-    // const writeStream = fs.createWriteStream(targetPath)
-    // const response = await request(downloadLink, { dispatcher })
-    // try {
-    //   await pipeline(response.body, writeStream)
-    // } catch (error) {
-    //   console.error(`download ${ repo } - ${ file } failed:`, error.message)
-    // } finally {
-    //   writeStream.close()
-    // }
-    break
+      const downloader = new Downloader({
+        url: downloadLink,
+        directory: targetDir,
+        fileName: path.basename(file),
+        proxy: process.env.HG_RPOXY
+      })
+      await downloader.download()
+    } catch (err) {
+      console.log(`download failed: ${ repo } - ${ file }`)
+      console.log(err.message)
+      break
+    }
   }
 }
 run().then(() => process.exit(0))
