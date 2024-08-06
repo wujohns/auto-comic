@@ -8,7 +8,16 @@ const fs = require('fs')
 const path = require('path')
 const axios = require('axios')
 const { NodeSSH } = require('node-ssh')
+const { ProxyAgent, fetch } = require('undici')
 require('dotenv').config({ path: path.join(__dirname, '../.env') })
+
+// huggingface 自定义 fetch(支持 proxy 特性)
+const hgDispatcher = new ProxyAgent(process.env.HG_RPOXY)
+exports.hgCustomFetch = (input, init) => {
+  const reqInit = init || {}
+  reqInit.dispatcher = hgDispatcher
+  return fetch(input, reqInit)
+}
 
 // 发送请求
 exports.doSdReq = async (config) => {
