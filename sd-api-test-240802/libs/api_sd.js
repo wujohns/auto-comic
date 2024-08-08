@@ -50,3 +50,18 @@ exports.controlnetDetect = async (data) => {
   const res = await doSdReq(config)
   return res.data
 }
+
+/**
+ * sd 的 sam 相关
+ * @param data - 调用参数
+ */
+exports.samMask = async (data) => {
+  const config = {
+    url: '/sam/sam-predict',
+    method: 'POST',
+    params: {},
+    data
+  }
+  const res = await doSdReq(config)
+  return res.data
+}

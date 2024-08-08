@@ -136,7 +136,7 @@ sync:
 	rsync -a --progress /root/projects/auto-comic/tools/stable-diffusion-webui/models/Stable-diffusion /root/projects/auto-comic/
 
 
-# sd api 相关测试内容
+# sd api 相关测试内容(使用 no-hashing 减少模型切换时间)
 sdnew:
 	cd tools/sd-webui-240802 && \
-	/root/.virtualenvs/sd-webui-240802/bin/python launch.py --listen --xformers --api --no-half --no-half-vae
+	/root/.virtualenvs/sd-webui-240802/bin/python launch.py --listen --xformers --api --no-half --no-half-vae --no-hashing
