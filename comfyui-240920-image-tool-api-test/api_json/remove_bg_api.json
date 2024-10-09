@@ -1,0 +1,47 @@
+{
+  "3": {
+    "inputs": {
+      "rmbgmodel": [
+        "4",
+        0
+      ],
+      "image": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "BRIA_RMBG_Zho",
+    "_meta": {
+      "title": "🧹BRIA RMBG"
+    }
+  },
+  "4": {
+    "inputs": {},
+    "class_type": "BRIA_RMBG_ModelLoader_Zho",
+    "_meta": {
+      "title": "🧹BRIA_RMBG Model Loader"
+    }
+  },
+  "17": {
+    "inputs": {
+      "url_or_path": ""
+    },
+    "class_type": "LoadImageFromUrlOrPath",
+    "_meta": {
+      "title": "LoadImageFromUrlOrPath"
+    }
+  },
+  "18": {
+    "inputs": {
+      "filename_prefix": "Image",
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  }
+}

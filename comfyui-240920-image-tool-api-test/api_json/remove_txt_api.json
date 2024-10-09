@@ -1,0 +1,247 @@
+{
+  "11": {
+    "inputs": {
+      "ckpt_name": "realisticVisionV60B1_v51VAE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "12": {
+    "inputs": {
+      "seed": 403182161299023,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "26",
+        0
+      ],
+      "positive": [
+        "26",
+        1
+      ],
+      "negative": [
+        "26",
+        2
+      ],
+      "latent_image": [
+        "26",
+        3
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "21": {
+    "inputs": {
+      "samples": [
+        "12",
+        0
+      ],
+      "vae": [
+        "11",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "25": {
+    "inputs": {
+      "brushnet": "powerpaint/diffusion_pytorch_model.safetensors",
+      "dtype": "float16"
+    },
+    "class_type": "BrushNetLoader",
+    "_meta": {
+      "title": "BrushNet Loader"
+    }
+  },
+  "26": {
+    "inputs": {
+      "fitting": 1,
+      "function": "object removal",
+      "scale": 1,
+      "start_at": 0,
+      "end_at": 10000,
+      "save_memory": "none",
+      "model": [
+        "11",
+        0
+      ],
+      "vae": [
+        "11",
+        2
+      ],
+      "image": [
+        "69",
+        0
+      ],
+      "mask": [
+        "59",
+        0
+      ],
+      "powerpaint": [
+        "25",
+        0
+      ],
+      "clip": [
+        "27",
+        0
+      ],
+      "positive": [
+        "29",
+        0
+      ],
+      "negative": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "PowerPaint",
+    "_meta": {
+      "title": "PowerPaint"
+    }
+  },
+  "27": {
+    "inputs": {
+      "base": "sd15_fp16.safetensors",
+      "powerpaint": "powerpaint/pytorch_model.bin"
+    },
+    "class_type": "PowerPaintCLIPLoader",
+    "_meta": {
+      "title": "PowerPaint CLIP Loader"
+    }
+  },
+  "29": {
+    "inputs": {
+      "text": "empty scene blur",
+      "clip": [
+        "11",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "30": {
+    "inputs": {
+      "text": "text, word, logo, watermark",
+      "clip": [
+        "11",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "55": {
+    "inputs": {
+      "model_name": "sam2_hiera_base_plus.pt"
+    },
+    "class_type": "SAM2ModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAM2ModelLoader (segment anything)"
+    }
+  },
+  "56": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinB (938MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "57": {
+    "inputs": {
+      "prompt": "text",
+      "threshold": 0.25,
+      "sam_model": [
+        "55",
+        0
+      ],
+      "grounding_dino_model": [
+        "56",
+        0
+      ],
+      "image": [
+        "69",
+        0
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "59": {
+    "inputs": {
+      "grow": 8,
+      "blur": 7,
+      "mask": [
+        "57",
+        1
+      ]
+    },
+    "class_type": "INPAINT_ExpandMask",
+    "_meta": {
+      "title": "Expand Mask"
+    }
+  },
+  "64": {
+    "inputs": {
+      "kernel": 10,
+      "sigma": 10,
+      "inpaint": [
+        "21",
+        0
+      ],
+      "original": [
+        "69",
+        0
+      ],
+      "mask": [
+        "59",
+        0
+      ]
+    },
+    "class_type": "BlendInpaint",
+    "_meta": {
+      "title": "Blend Inpaint"
+    }
+  },
+  "69": {
+    "inputs": {
+      "url_or_path": ""
+    },
+    "class_type": "LoadImageFromUrlOrPath",
+    "_meta": {
+      "title": "LoadImageFromUrlOrPath"
+    }
+  },
+  "70": {
+    "inputs": {
+      "filename_prefix": "Image",
+      "images": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_canny.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_canny.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_depth.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_depth.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_depth_V2.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_depth_V2.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_dw_openpose.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_dw_openpose.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_lineart_anime_denoise.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_lineart_anime_denoise.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_mlsd_V2.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_mlsd_V2.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_normal.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_normal.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_normal_dsine.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_normal_dsine.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_recolor_luminance.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_recolor_luminance.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_segment_animeface.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_segment_animeface.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_segment_animeface_V2.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_segment_animeface_V2.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_sketch.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_sketch.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_softedge.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_softedge.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_t2i-adapter_color_shuffle.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_t2i-adapter_color_shuffle.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_tile_anime_alpha.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_tile_anime_alpha.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_tile_anime_beta.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_tile_anime_beta.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/resolve/main/bdsqlsz_controlllite_xl_tile_realistic.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "bdsqlsz_controlllite_xl_tile_realistic.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/kataragi/controlnetXL_inpaint/resolve/main/Kataragi_inpaintXL-fp16.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "Kataragi_inpaintXL-fp16.safetensors"
+  },
+  {
+    "downloadLink": "https://huggingface.co/kataragi/controlnetXL_inpaint/resolve/main/Kataragi_inpaintXL-lora128.safetensors",
+    "repo": "bdsqlsz/qinglong_controlnet-lllite",
+    "file": "Kataragi_inpaintXL-lora128.safetensors"
+  }
+]

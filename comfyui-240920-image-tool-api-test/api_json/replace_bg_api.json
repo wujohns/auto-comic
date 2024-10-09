@@ -1,0 +1,257 @@
+{
+  "3": {
+    "inputs": {
+      "rmbgmodel": [
+        "4",
+        0
+      ],
+      "image": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "BRIA_RMBG_Zho",
+    "_meta": {
+      "title": "🧹BRIA RMBG"
+    }
+  },
+  "4": {
+    "inputs": {},
+    "class_type": "BRIA_RMBG_ModelLoader_Zho",
+    "_meta": {
+      "title": "🧹BRIA_RMBG Model Loader"
+    }
+  },
+  "22": {
+    "inputs": {
+      "mask": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "25": {
+    "inputs": {
+      "ckpt_name": "juggernautXL_juggXIByRundiffusion.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "27": {
+    "inputs": {
+      "seed": 698218800904517,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "25",
+        0
+      ],
+      "positive": [
+        "39",
+        0
+      ],
+      "negative": [
+        "39",
+        1
+      ],
+      "latent_image": [
+        "35",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "28": {
+    "inputs": {
+      "samples": [
+        "27",
+        0
+      ],
+      "vae": [
+        "25",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "32": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "25",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "33": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "25",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "35": {
+    "inputs": {
+      "positive": [
+        "32",
+        0
+      ],
+      "negative": [
+        "33",
+        0
+      ],
+      "vae": [
+        "25",
+        2
+      ],
+      "pixels": [
+        "60",
+        0
+      ],
+      "mask": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "InpaintModelConditioning",
+    "_meta": {
+      "title": "InpaintModelConditioning"
+    }
+  },
+  "37": {
+    "inputs": {
+      "expand": 2,
+      "tapered_corners": true,
+      "mask": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "GrowMask",
+    "_meta": {
+      "title": "GrowMask"
+    }
+  },
+  "39": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "35",
+        0
+      ],
+      "negative": [
+        "35",
+        1
+      ],
+      "control_net": [
+        "42",
+        0
+      ],
+      "image": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet (Advanced)"
+    }
+  },
+  "42": {
+    "inputs": {
+      "control_net_name": "Kataragi_inpaintXL-lora128.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "43": {
+    "inputs": {
+      "black_pixel_for_xinsir_cn": false,
+      "image": [
+        "60",
+        0
+      ],
+      "mask": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "InpaintPreprocessor",
+    "_meta": {
+      "title": "Inpaint Preprocessor"
+    }
+  },
+  "50": {
+    "inputs": {
+      "kernel": 10,
+      "sigma": 10,
+      "inpaint": [
+        "28",
+        0
+      ],
+      "original": [
+        "60",
+        0
+      ],
+      "mask": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "BlendInpaint",
+    "_meta": {
+      "title": "Blend Inpaint"
+    }
+  },
+  "59": {
+    "inputs": {
+      "filename_prefix": "Image",
+      "images": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  },
+  "60": {
+    "inputs": {
+      "url_or_path": ""
+    },
+    "class_type": "LoadImageFromUrlOrPath",
+    "_meta": {
+      "title": "LoadImageFromUrlOrPath"
+    }
+  }
+}

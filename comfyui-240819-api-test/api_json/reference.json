@@ -1,0 +1,190 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "realDream_sdxlPony10.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "2": {
+    "inputs": {
+      "urls": ""
+    },
+    "class_type": "LoadImageFromURL",
+    "_meta": {
+      "title": "Load Image From Url"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "Beautiful Asian young girl,delicate features.long flowing brown hair,gentle smile,dreamy expression, pastel colors, artistic style, holding a red apple in her hand, the apple is clearly visible",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "(worst quality, low quality, normal quality:1.4), lowres, skin spots, acnes, skin blemishes, age spot, glans, extra fingers, fewer fingers, strange fingers, ((bad hand)), Hand grip, (lean), Extra ears, (Four ears), Strange eyes, (three arms), Many hands, (Many arms), ((watermarking))",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "reference_type": "reference_attn",
+      "style_fidelity": 0.5,
+      "ref_weight": 1
+    },
+    "class_type": "ACN_ReferenceControlNet",
+    "_meta": {
+      "title": "Reference ControlNet 🛂🅐🅒🅝"
+    }
+  },
+  "8": {
+    "inputs": {
+      "pixels": [
+        "2",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ],
+      "latent_size": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ACN_ReferencePreprocessor",
+    "_meta": {
+      "title": "Reference Preproccessor 🛂🅐🅒🅝"
+    }
+  },
+  "10": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "control_net": [
+        "7",
+        0
+      ],
+      "image": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet (Advanced)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "seed": 344384238712610,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "10",
+        0
+      ],
+      "negative": [
+        "10",
+        1
+      ],
+      "latent_image": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "15": {
+    "inputs": {
+      "samples": [
+        "13",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "16": {
+    "inputs": {
+      "filename_prefix": "Image",
+      "images": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  }
+}

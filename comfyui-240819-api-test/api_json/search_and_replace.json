@@ -1,0 +1,225 @@
+{
+  "1": {
+    "inputs": {
+      "model_name": "sam2_hiera_large.pt"
+    },
+    "class_type": "SAM2ModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAM2ModelLoader (segment anything)"
+    }
+  },
+  "2": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinB (938MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "3": {
+    "inputs": {
+      "urls": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/b322c23e-c9fe-4778-8480-bee7337b286b/original=true,quality=90/24790161.jpeg"
+    },
+    "class_type": "LoadImageFromURL",
+    "_meta": {
+      "title": "Load Image From Url"
+    }
+  },
+  "4": {
+    "inputs": {
+      "prompt": "eyes",
+      "threshold": 0.3,
+      "sam_model": [
+        "1",
+        0
+      ],
+      "grounding_dino_model": [
+        "2",
+        0
+      ],
+      "image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "ckpt_name": "realDream_sdxlPony10.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "10": {
+    "inputs": {
+      "text": "red eyes",
+      "clip": [
+        "8",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "text": "(worst quality, low quality, normal quality:1.4), lowres, skin spots, acnes, skin blemishes, age spot, glans, extra fingers, fewer fingers, strange fingers, ((bad hand)), Hand grip, (lean), Extra ears, (Four ears), Strange eyes, (three arms), Many hands, (Many arms), ((watermarking))",
+      "clip": [
+        "8",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "control_net_name": "Kataragi_inpaintXL-lora128.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": [
+        "3",
+        0
+      ],
+      "mask": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "InpaintPreprocessor",
+    "_meta": {
+      "title": "Inpaint Preprocessor"
+    }
+  },
+  "18": {
+    "inputs": {
+      "positive": [
+        "10",
+        0
+      ],
+      "negative": [
+        "11",
+        0
+      ],
+      "vae": [
+        "8",
+        2
+      ],
+      "pixels": [
+        "3",
+        0
+      ],
+      "mask": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "InpaintModelConditioning",
+    "_meta": {
+      "title": "InpaintModelConditioning"
+    }
+  },
+  "19": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "18",
+        0
+      ],
+      "negative": [
+        "18",
+        1
+      ],
+      "control_net": [
+        "15",
+        0
+      ],
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply ControlNet (Advanced)"
+    }
+  },
+  "23": {
+    "inputs": {
+      "seed": 638211057105928,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "8",
+        0
+      ],
+      "positive": [
+        "19",
+        0
+      ],
+      "negative": [
+        "19",
+        1
+      ],
+      "latent_image": [
+        "18",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "25": {
+    "inputs": {
+      "samples": [
+        "23",
+        0
+      ],
+      "vae": [
+        "8",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "26": {
+    "inputs": {
+      "filename_prefix": "Image",
+      "images": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  }
+}

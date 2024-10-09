@@ -1,0 +1,195 @@
+{
+  "1": {
+    "inputs": {
+      "urls": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/b322c23e-c9fe-4778-8480-bee7337b286b/original=true,quality=90/24790161.jpeg"
+    },
+    "class_type": "LoadImageFromURL",
+    "_meta": {
+      "title": "Load Image From Url"
+    }
+  },
+  "2": {
+    "inputs": {
+      "urls": "https://monica-private-dev.s3.us-east-1.amazonaws.com/artist_bot/images/output/eyes_mask.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAZV3A2ECZJNPM5FT2%2F20240829%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240829T064103Z&X-Amz-Expires=3600&X-Amz-Signature=92b34c54465bdb374984d8c53f9609685371ac82eb854028b606e690c060d0dc&X-Amz-SignedHeaders=host&x-id=GetObject",
+      "channel": "red"
+    },
+    "class_type": "LoadMaskFromURL",
+    "_meta": {
+      "title": "Load Image From Url (As Mask)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "ckpt_name": "realDream_sdxlPony10.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器(简易)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "red eyes",
+      "clip": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码器"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": "(worst quality, low quality, normal quality:1.4), lowres, skin spots, acnes, skin blemishes, age spot, glans, extra fingers, fewer fingers, strange fingers, ((bad hand)), Hand grip, (lean), Extra ears, (Four ears), Strange eyes, (three arms), Many hands, (Many arms), ((watermarking))",
+      "clip": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码器"
+    }
+  },
+  "13": {
+    "inputs": {
+      "control_net_name": "Kataragi_inpaintXL-lora128.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "ControlNet加载器"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "mask": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "InpaintPreprocessor",
+    "_meta": {
+      "title": "Inpaint内补预处理器"
+    }
+  },
+  "16": {
+    "inputs": {
+      "positive": [
+        "8",
+        0
+      ],
+      "negative": [
+        "9",
+        0
+      ],
+      "vae": [
+        "6",
+        2
+      ],
+      "pixels": [
+        "1",
+        0
+      ],
+      "mask": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "InpaintModelConditioning",
+    "_meta": {
+      "title": "内补模型条件"
+    }
+  },
+  "17": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "16",
+        0
+      ],
+      "negative": [
+        "16",
+        1
+      ],
+      "control_net": [
+        "13",
+        0
+      ],
+      "image": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "ControlNet应用(高级)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "seed": 80754066314274,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "6",
+        0
+      ],
+      "positive": [
+        "17",
+        0
+      ],
+      "negative": [
+        "17",
+        1
+      ],
+      "latent_image": [
+        "16",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "23": {
+    "inputs": {
+      "samples": [
+        "21",
+        0
+      ],
+      "vae": [
+        "6",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "24": {
+    "inputs": {
+      "filename_prefix": "Image",
+      "images": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "10": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2plus.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "Load Upscale Model"
+    }
+  },
+  "11": {
+    "inputs": {
+      "upscale_model": [
+        "10",
+        0
+      ],
+      "image": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "Upscale Image (using Model)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "url_or_path": ""
+    },
+    "class_type": "LoadImageFromUrlOrPath",
+    "_meta": {
+      "title": "LoadImageFromUrlOrPath"
+    }
+  },
+  "20": {
+    "inputs": {
+      "filename_prefix": "Image",
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  }
+}

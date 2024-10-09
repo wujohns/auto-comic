@@ -1,0 +1,76 @@
+{
+  "12": {
+    "inputs": {
+      "prompt": "background",
+      "threshold": 0.3,
+      "sam_model": [
+        "14",
+        0
+      ],
+      "grounding_dino_model": [
+        "13",
+        0
+      ],
+      "image": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "13": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinB (938MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything)"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model_name": "sam2_hiera_large.pt"
+    },
+    "class_type": "SAM2ModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAM2ModelLoader (segment anything)"
+    }
+  },
+  "26": {
+    "inputs": {
+      "urls": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/2e81a498-56a1-4beb-afb4-a18251542f08/width=450/2024-08-13_18-45-32_flux.1_dev_16x16.jpeg"
+    },
+    "class_type": "LoadImageFromURL",
+    "_meta": {
+      "title": "Load Image From Url"
+    }
+  },
+  "28": {
+    "inputs": {
+      "mask": [
+        "12",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "30": {
+    "inputs": {
+      "filename_prefix": "auto_sam",
+      "images": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_ip2p.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11e_sd15_ip2p.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11e_sd15_shuffle.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11e_sd15_shuffle.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1e_sd15_tile.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11f1e_sd15_tile.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11f1p_sd15_depth.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_canny.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_inpaint.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_inpaint.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_lineart.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_mlsd.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_mlsd.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_normalbae.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_normalbae.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_openpose.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_scribble.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_scribble.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_seg.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_seg.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_softedge.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15_softedge.pth"
+  },
+  {
+    "downloadLink": "https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15s2_lineart_anime.pth",
+    "repo": "lllyasviel/ControlNet-v1-1",
+    "file": "control_v11p_sd15s2_lineart_anime.pth"
+  }
+]

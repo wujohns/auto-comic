@@ -1,0 +1,212 @@
+{
+  "11": {
+    "inputs": {
+      "ckpt_name": "realisticVisionV60B1_v51VAE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "12": {
+    "inputs": {
+      "seed": 423211796692559,
+      "steps": 20,
+      "cfg": 7.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "26",
+        0
+      ],
+      "positive": [
+        "26",
+        1
+      ],
+      "negative": [
+        "26",
+        2
+      ],
+      "latent_image": [
+        "26",
+        3
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "15": {
+    "inputs": {
+      "mask_threshold": 250,
+      "gaussblur_radius": 8,
+      "invert_mask": false,
+      "images": [
+        "49",
+        0
+      ],
+      "masks": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "LamaRemover",
+    "_meta": {
+      "title": "Big lama Remover"
+    }
+  },
+  "21": {
+    "inputs": {
+      "samples": [
+        "12",
+        0
+      ],
+      "vae": [
+        "11",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "25": {
+    "inputs": {
+      "brushnet": "powerpaint/diffusion_pytorch_model.safetensors",
+      "dtype": "float16"
+    },
+    "class_type": "BrushNetLoader",
+    "_meta": {
+      "title": "BrushNet Loader"
+    }
+  },
+  "26": {
+    "inputs": {
+      "fitting": 1,
+      "function": "object removal",
+      "scale": 1,
+      "start_at": 0,
+      "end_at": 10000,
+      "save_memory": "none",
+      "model": [
+        "11",
+        0
+      ],
+      "vae": [
+        "11",
+        2
+      ],
+      "image": [
+        "15",
+        0
+      ],
+      "mask": [
+        "52",
+        0
+      ],
+      "powerpaint": [
+        "25",
+        0
+      ],
+      "clip": [
+        "27",
+        0
+      ],
+      "positive": [
+        "29",
+        0
+      ],
+      "negative": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "PowerPaint",
+    "_meta": {
+      "title": "PowerPaint"
+    }
+  },
+  "27": {
+    "inputs": {
+      "base": "sd15_fp16.safetensors",
+      "powerpaint": "powerpaint/pytorch_model.bin"
+    },
+    "class_type": "PowerPaintCLIPLoader",
+    "_meta": {
+      "title": "PowerPaint CLIP Loader"
+    }
+  },
+  "29": {
+    "inputs": {
+      "text": "empty scene blur",
+      "clip": [
+        "11",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "30": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "11",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "44": {
+    "inputs": {
+      "filename_prefix": "Image",
+      "images": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "SaveImageS3",
+    "_meta": {
+      "title": "Save Image to S3"
+    }
+  },
+  "49": {
+    "inputs": {
+      "url_or_path": ""
+    },
+    "class_type": "LoadImageFromUrlOrPath",
+    "_meta": {
+      "title": "LoadImageFromUrlOrPath"
+    }
+  },
+  "50": {
+    "inputs": {
+      "url_or_path": ""
+    },
+    "class_type": "LoadImageFromUrlOrPath",
+    "_meta": {
+      "title": "LoadImageFromUrlOrPath"
+    }
+  },
+  "52": {
+    "inputs": {
+      "channel": "red",
+      "image": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "ImageToMask",
+    "_meta": {
+      "title": "Convert Image to Mask"
+    }
+  }
+}
