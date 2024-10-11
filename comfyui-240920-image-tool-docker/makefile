@@ -44,3 +44,14 @@ download:
 	wget https://huggingface.co/google-bert/bert-base-uncased/resolve/main/config.json && \
 	wget https://huggingface.co/google-bert/bert-base-uncased/resolve/main/vocab.txt && \
 	wget https://huggingface.co/google-bert/bert-base-uncased/resolve/main/model.safetensors
+
+# 推送到 aws registry 的步骤
+# 1. 登陆/2. retag/3. push
+aws-auth:
+	aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 665386098866.dkr.ecr.us-east-1.amazonaws.com
+
+docker-retag:
+	sudo docker tag 0d8d14e5d9d7 665386098866.dkr.ecr.us-east-1.amazonaws.com/comfyui-image-tool-models:0.0.2
+
+docker-push:
+	sudo docker push 665386098866.dkr.ecr.us-east-1.amazonaws.com/comfyui-image-tool-models:0.0.2
