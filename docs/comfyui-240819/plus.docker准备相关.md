@@ -99,7 +99,7 @@ sudo docker run \
   --name comfy-server \
   --restart=always \
   -p 8188:8188 \
-  comfyui-image-tool-models:0.0.2
+  comfyui-audio-clone-models:0.0.1
 
 sudo docker exec -it comfy-server /bin/bash
 

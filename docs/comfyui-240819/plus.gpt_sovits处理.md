@@ -19,23 +19,26 @@ from huggingface_hub import snapshot_download
 snapshot_download(repo_id="lj1995/GPT-SoVITS",local_dir=models_dir)
 ```
 
-ntlk 数据准备(需要对以下数据做追踪):
-```
-[nltk_data] Downloading package averaged_perceptron_tagger to
-[nltk_data]     /home/ubuntu/nltk_data...
-[nltk_data]   Unzipping taggers/averaged_perceptron_tagger.zip.
-[nltk_data] Downloading package cmudict to /home/ubuntu/nltk_data...
-[nltk_data]   Unzipping corpora/cmudict.zip.
+https://paddlespeech.bj.bcebos.com/Parakeet/released_models/g2p/G2PWModel_1.1.zip  
+解压到 /custom_nodes/GSTTS-ComfyUI/GPT_SoVITS/pretrained_models 目录下，并重命名为 G2PWModel，同时解压的 G2PWModel_1.1 也需要保留  
+
+nltk 数据准备:
+```python
+nltk_dir = getAbsPath('./nltk_data')  # 为用户根目录下的 nltk_data 目录(~/nltk_data)
+nltk.download('averaged_perceptron_tagger_eng', download_dir=nltk_dir)
+nltk.download('averaged_perceptron_tagger', download_dir=nltk_dir)
+nltk.download('cmudict', download_dir=nltk_dir)
 ```
 
 依赖准备:
 apt install ffmpeg  
 
-### TODO 需要额外开发插件
-loadAudioFromUrl - 从 url 中加载 audio  
-- 参考 ComfyUI 中的 comfy_extras/nodes_audio.py 对 load audio 节点的实现(需要确保输出格式一致)  
-- 参考 https://github.com/tsogzark/ComfyUI-load-image-from-url 中的实现  
+https://github.com/r9y9/pyopenjtalk 这个包会触发下载
+日语合成部分的 https://github.com/r9y9/open_jtalk/releases/download/v1.11.1/open_jtalk_dic_utf_8-1.11.tar.gz 的文件处理需要做复查
 
-saveAudioToS3 - 将 audio 保存到 S3 存储中  
-- 参考 ComfyUI 中的 comfy_extras/nodes_audio.py 对 save audio 节点的实现(参考其入参的格式化方法 -- torchaudio 的相关转换实现)  
-- 参考 https://github.com/TemryL/ComfyS3 中的实现  
+### 使用节点: ComfyS3Plus
+项目地址: https://github.com/wujohns/ComfyS3Plus
+
+备注: 该节点新增的功能为从连接加载音频以及上传音频到S3
+
+TODO 构建全语种测试案例
