@@ -104,3 +104,6 @@ const adjust_image = {
     return imageUrl
   }
 }
+
+一些潜在的可能可用的记录:
+https://swiftbrushv2.github.io
