@@ -92,14 +92,15 @@ docker build . \
     -t <image_name>:<tag>
 
 ## 临时记录
-sudo docker build -t comfyui-image-tool-models:0.0.2 .
+sudo docker build -t comfyui-base:0.0.3 .
+sudo docker build -t comfyui-svd-models:0.0.1 .
 
 sudo docker run \
   -dit --shm-size 1g --gpus all \
   --name comfy-server \
   --restart=always \
   -p 8188:8188 \
-  comfyui-audio-clone-models:0.0.1
+  comfyui-svd-models:0.0.1
 
 sudo docker exec -it comfy-server /bin/bash
 
