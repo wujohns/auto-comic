@@ -3,6 +3,7 @@ tools/Bark-Voice-Cloning
 tools/lora-scripts
 tools/sd-webui-240802
 tools/comfyui-240819
+tools/comfyui-250117
 train-imgs/
 .vscode/
 tmp

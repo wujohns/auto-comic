@@ -3,6 +3,9 @@
 AIFSH/ComfyUI-GPT_SoVITS -- 适配 gpt_sovits v1  
 AIFSH/GSTTS-ComfyUI -- 适配 gpt_sovits v2  
 
+一些注意事项:
+部分场景下录音的音频没有结束符，后端处理的话采用该方式做尾部封口 ffmpeg -i bad.m4a -c:a aac cc.m4a
+
 原始项目: https://github.com/RVC-Boss/GPT-SoVITS  
 NOTICE:
 1. audio 相关的部分和 image 相关的部分存在一些依赖冲突，这里采用新建 comfyui 环境做处理  

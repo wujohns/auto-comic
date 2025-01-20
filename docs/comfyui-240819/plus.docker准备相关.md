@@ -92,17 +92,19 @@ docker build . \
     -t <image_name>:<tag>
 
 ## 临时记录
-sudo docker build -t comfyui-base:0.0.3 .
-sudo docker build -t comfyui-svd-models:0.0.1 .
+sudo docker build -t comfyui-svd:0.0.2 .
+sudo docker build -t comfyui-image-tool-models:0.0.3 .
+
+sudo docker build -t comfyui-image-tool-models:0.0.5 .
 
 sudo docker run \
   -dit --shm-size 1g --gpus all \
-  --name comfy-server \
+  --name my2024 \
   --restart=always \
   -p 8188:8188 \
-  comfyui-svd-models:0.0.1
+  nvidia-base:0.0.1
 
-sudo docker exec -it comfy-server /bin/bash
+sudo docker exec -it my2024 /bin/bash
 
 python main.py --listen --port 8188 --highvram
 

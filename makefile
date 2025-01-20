@@ -1,6 +1,8 @@
-LOCAL_PROXY = http://192.168.10.100:7890
+LOCAL_PROXY = http://192.168.10.100:7990
 # LOCAL_PROXY = http://192.168.1.2:7890
-PROXY = http://192.168.10.100:7890
+PROXY = http://192.168.10.100:7990
+
+# git clone 
 
 # 启动 sd(由于显卡版本过老用的是p40，不支持半精度，所以 --no-half)
 sd:
@@ -142,9 +144,17 @@ sdnew:
 
 # comfy ui 启动
 # https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/issues/100
-comfyui:
+comfyui-2024:
 	export http_proxy=${LOCAL_PROXY} && \
 	export https_proxy=${LOCAL_PROXY} && \
 	export no_proxy="localhost, 127.0.0.1/8, ::1" && \
 	cd tools/comfyui-240819 && \
 	/root/.virtualenvs/comfyui-240819/bin/python main.py --listen --port 8188 --highvram
+
+# 2025 相关改动
+comfyui:
+	export http_proxy=${LOCAL_PROXY} && \
+	export https_proxy=${LOCAL_PROXY} && \
+	export no_proxy="localhost, 127.0.0.1/8, ::1" && \
+	cd tools/comfyui-250117 && \
+	/root/.virtualenvs/comfyui-250117/bin/python main.py --listen --port 8188 --highvram
