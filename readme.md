@@ -108,5 +108,7 @@ const adjust_image = {
 一些潜在的可能可用的记录:
 https://swiftbrushv2.github.io
 
-采用新版方式处理
-https://www.uisdc.com/comfyui-8
+
+- role 方案:
+  - live2d: https://human3daigc.github.io/Textoon_webpage/
+  - image: https://pscgylotti.github.io/pages/RAIN/
