@@ -29,3 +29,6 @@ comfyui-240920-image-tool-docker/models
 comfyui-240920-image-tool-docker/comfys3_env
 comfyui-240920-image-tool-docker/comfyui_login_pwd
 comfyui-240920-image-tool-docker/bria_rmbg.pth
+
+comfyui-250117-step-test/.env
+comfyui-250117-step-test/outputs

@@ -112,3 +112,6 @@ https://swiftbrushv2.github.io
 - role 方案:
   - live2d: https://human3daigc.github.io/Textoon_webpage/
   - image: https://pscgylotti.github.io/pages/RAIN/
+
+TODO:
+- 对 comfyui manager 的分步输出做测试 -- 测试 OK
