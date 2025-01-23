@@ -53,7 +53,7 @@ def get_images(ws, prompt):
             # If you want to be able to decode the binary stream for latent previews, here is how you can do it:
             bytesIO = BytesIO(out[8:])
             preview_image = Image.open(bytesIO) # This is your preview in PIL image format, store it in a global
-            file_path = step_img_dir + '/' + str(file_id) + '.png'
+            file_path = step_img_dir + '_' + str(file_id) + '.png'
             preview_image.save(file_path)
 
             file_id += 1

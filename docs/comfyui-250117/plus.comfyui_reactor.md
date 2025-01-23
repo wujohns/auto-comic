@@ -27,4 +27,19 @@ sam 模型需要手动下载:
 切换到 `/comfyui-250117/models/sams` 目录
 执行
 `wget -e "https_proxy=http://192.168.10.100:7990" https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/sams/sam_vit_b_01ec64.pth`  
-`wget -e "https_proxy=http://192.168.10.100:7990" https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/sams/sam_vit_l_0b3195.pth`  
+`wget -e "https_proxy=http://192.168.10.100:7990" https://huggingface.co/datasets/Gourieff/ReActor/resolve/mazin/models/sams/sam_vit_l_0b3195.pth`  
+
+face_yolov8m.pt 模型需要手动下载
+切换到 `/comfyui-250117/models/ultralytics/bbox` 目录
+执行
+`wget -e "https_proxy=http://192.168.10.100:7990" https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/detection/bbox/face_yolov8m.pt`
+
+## 对于环境的一些依赖
+comfyui-reactor-node 这个包用了较多的 onnx 的模型，且 onnxruntime-gpu 的版本为 1.20.1
+参考以下的版本适配: 
+https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements  
+得知 onnxruntime 1.20.x 需要 cuda 12.x 和 cudnn 9.x 的组合进行支持
+
+参考: https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local
+完成对应环境的准备(可能需要重启)
+
